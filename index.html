@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeopardy Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <a href="#" class="nav-logo">Jeopardy</a>
+      <div class="nav-links">
+        <a href="https://github.com/Kairos-T/jeopardy" class="nav-link"
+          >Source Code</a
+        >
+      </div>
+    </nav>
+
+    <!-- Landing Page -->
+    <div id="landing-page" class="page">
+      <h1>Welcome to Jeopardy!</h1>
+      <p>A jeopardy game engine developed for WISP</p>
+      <p>Team Members: Kairos, Ming Xuan, Steven, Derion, Kugan</p>
+      <br />
+      <div id="topic-selection">
+        <h2>Select a Topic:</h2>
+        <div id="topics-container"></div>
+      </div>
+    </div>
+
+    <!-- Game Board -->
+    <div id="game-board" class="page hidden">
+      <h2 id="selected-topic"></h2>
+      <div id="categories-container"></div>
+    </div>
+
+    <!-- Qn Modal -->
+    <div id="question-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3 id="question-text"></h3>
+        <div id="options-container"></div>
+        <div id="answer-reveal" class="hidden">
+          <p>Correct Answer: <span id="correct-answer"></span></p>
+        </div>
+        <button id="close-modal">Close</button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-copyright">
+          2025 WISP by Kairos, Ming Xuan, Steven, Derion and Kugan
+        </div>
+        <div class="footer-links"></div>
+      </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
