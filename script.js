@@ -122,9 +122,9 @@ function getDifficultyClass(points) {
 }
 
 function getDuration(points) {
-  if (points === 1) return 7;
-  if (points === 2) return 11;
-  return 15;
+  if (points === 1) return 10;
+  if (points === 2) return 15;
+  return 20;
 }
 
 function startTimer(timerBar, duration) {
