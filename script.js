@@ -117,14 +117,14 @@ function createTimer(difficulty) {
 
 function getDifficultyClass(points) {
   if (points === 1) return "easy";
-  if (points === 3) return "medium";
+  if (points === 2) return "medium";
   return "hard";
 }
 
 function getDuration(points) {
-  if (points === 1) return 10;
-  if (points === 3) return 15;
-  return 20;
+  if (points === 1) return 7;
+  if (points === 2) return 11;
+  return 15;
 }
 
 function startTimer(timerBar, duration) {

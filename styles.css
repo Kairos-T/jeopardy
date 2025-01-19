@@ -183,11 +183,11 @@ body {
   background-color: #2ecc71; /* Green for easy */
 }
 
-.question-card[data-points="3"] {
+.question-card[data-points="2"] {
   background-color: #f39c12; /* Orange for medium */
 }
 
-.question-card[data-points="5"] {
+.question-card[data-points="3"] {
   background-color: #e74c3c; /* Red for hard */
 }
 
@@ -195,11 +195,11 @@ body {
   background-color: #27ae60;
 }
 
-.question-card[data-points="3"]:hover:not(.revealed) {
+.question-card[data-points="2"]:hover:not(.revealed) {
   background-color: #d35400;
 }
 
-.question-card[data-points="5"]:hover:not(.revealed) {
+.question-card[data-points="3"]:hover:not(.revealed) {
   background-color: #c0392b;
 }
 

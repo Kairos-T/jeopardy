@@ -15,7 +15,7 @@ const gameData = {
               answer: "3) 2.2",
             },
             {
-              points: 3,
+              points: 2,
               question:
                 "What is one initiative that the Japanese government has implemented to reduce its low birth rate?",
               options: [
@@ -27,7 +27,7 @@ const gameData = {
               answer: "4) Flexible Work Schedules",
             },
             {
-              points: 5,
+              points: 3,
               question:
                 "What is the primary reason for regions, like Sub-Saharan Africa and parts of South Asia, to have high birth rates?",
               options: [
@@ -52,7 +52,7 @@ const gameData = {
               answer: "3) 0.97",
             },
             {
-              points: 3,
+              points: 2,
               question:
                 "What is the primary reason young Singaporeans delay marriage, contributing to the low birth rate?",
               options: [
@@ -64,7 +64,7 @@ const gameData = {
               answer: "2) Preference for career advancement and personal goals",
             },
             {
-              points: 5,
+              points: 3,
               question:
                 "Given Singapore's emphasis on meritocracy and individual achievement, how might this cultural value inadvertently contribute to the low birth rate?",
               options: [
@@ -93,7 +93,7 @@ const gameData = {
               answer: "3) Marriage and Parenthood Package",
             },
             {
-              points: 3,
+              points: 2,
               question: "What does WORK-HARMONY INITIATIVE offer?",
               options: [
                 "1) Flexible Work Arrangements (FWAs), such as telecommuting, staggered hours, and part-time work.",
@@ -105,7 +105,7 @@ const gameData = {
                 "3) Lifetime tax exemptions for parents with two or more children to encourage larger families.",
             },
             {
-              points: 5,
+              points: 3,
               question:
                 "What is the baby bonus cash gift for each child in Singapore?",
               options: [
@@ -136,7 +136,7 @@ const gameData = {
                 "2) Pressure on healthcare and social services for the elderly",
             },
             {
-              points: 3,
+              points: 2,
               question:
                 "Which of the following is a potential consequence of Singapore's aging population, as it faces a growing demand for elderly care?",
               options: [
@@ -149,7 +149,7 @@ const gameData = {
                 "4) Heightened generational divides, with younger generations feeling burdened.",
             },
             {
-              points: 5,
+              points: 3,
               question:
                 "How might Singapore's reliance on foreign labor affect its social cohesion and national identity?",
               options: [
@@ -178,7 +178,7 @@ const gameData = {
               answer: "4) Less demand for land development",
             },
             {
-              points: 3,
+              points: 2,
               question:
                 "Which is a consequence of a declining birth rate on Singapore's economy?",
               options: [
@@ -191,7 +191,7 @@ const gameData = {
                 "3) A decreased tax revenue, limiting government funding for essential services",
             },
             {
-              points: 5,
+              points: 3,
               question:
                 "What is one key risk associated with Singapore increasing its reliance on foreign workers to address a declining birth rate?",
               options: [
