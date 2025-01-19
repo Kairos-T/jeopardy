@@ -15,6 +15,9 @@ let currentTopic = null;
 let currentQuestion = null;
 const revealedQuestions = new Set();
 
+let timerInterval;
+let remainingTime;
+
 // Disable refresh and right-click on the page to prevent losing state during presentation
 document.addEventListener("keydown", (e) => {
   if ((e.ctrlKey || e.metaKey) && e.key === "r") {
@@ -88,6 +91,63 @@ function renderGameBoard() {
   });
 }
 
+function createTimer(difficulty) {
+  const timerContainer = document.createElement("div");
+  timerContainer.className = "timer-container";
+
+  const timerBar = document.createElement("div");
+  timerBar.className = `timer-bar ${getDifficultyClass(difficulty)}`;
+
+  timerContainer.appendChild(timerBar);
+
+  // insert timer at top of modal
+  const modalContent = document.querySelector(".modal-content");
+  modalContent.insertBefore(timerContainer, modalContent.firstChild);
+
+  // set timer duration based on difficulty
+  const duration = getDuration(difficulty);
+  remainingTime = duration;
+
+  // start countdown
+  startTimer(timerBar, duration);
+}
+
+function getDifficultyClass(points) {
+  if (points === 1) return "easy";
+  if (points === 3) return "medium";
+  return "hard";
+}
+
+function getDuration(points) {
+  if (points === 1) return 10;
+  if (points === 3) return 15;
+  return 20;
+}
+
+function startTimer(timerBar, duration) {
+  // Initial setup
+  timerBar.style.transition = `width ${duration}s linear`;
+  timerBar.style.width = "100%";
+
+  // Force a reflow to ensure the transition starts
+  timerBar.offsetHeight;
+
+  // Start the countdown
+  timerBar.style.width = "0%";
+
+  // Clear any existing interval
+  if (timerInterval) {
+    clearInterval(timerInterval);
+  }
+
+  timerInterval = setInterval(() => {
+    remainingTime--;
+    if (remainingTime <= 0) {
+      clearInterval(timerInterval);
+    }
+  }, 1000);
+}
+
 function showQuestion(category, question) {
   currentQuestion = { category, question };
   questionText.textContent = question.question;
@@ -104,6 +164,8 @@ function showQuestion(category, question) {
   questionModal.classList.remove("hidden");
   document.body.classList.add("modal-open");
   answerReveal.style.display = "none";
+
+  createTimer(question.points);
 }
 
 function renderOptions(question) {
