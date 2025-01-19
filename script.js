@@ -147,9 +147,19 @@ function startTimer(timerBar, duration) {
     remainingTime--;
     if (remainingTime <= 0) {
       clearInterval(timerInterval);
+      handleTimeout();
     }
   }, 1000);
 }
+
+function handleTimeout(questionId) {
+  currentQuestion.timedOut = true;
+  
+  const modalContent = document.querySelector('.modal-content');
+  modalContent.dataset.timedOut = 'true';
+  modalContent.style.backgroundColor = '#ffebee';
+}
+
 
 function stopTimer(timerBar) {
   // stop transition
@@ -164,7 +174,7 @@ function stopTimer(timerBar) {
 }
 
 function showQuestion(category, question) {
-  currentQuestion = { category, question };
+  currentQuestion = { category, question, timedOut: false };
   questionText.textContent = question.question;
 
   const pointsDisplay = document.createElement("div");
@@ -175,13 +185,18 @@ function showQuestion(category, question) {
 
   questionText.parentNode.insertBefore(pointsDisplay, optionsContainer);
 
+  // reset modal content background color
+  const modalContent = document.querySelector('.modal-content');
+  modalContent.style.backgroundColor = 'white';
+  delete modalContent.dataset.timedOut;
+
   renderOptions(question);
   questionModal.classList.remove("hidden");
   document.body.classList.add("modal-open");
   answerReveal.style.display = "none";
-
-  const timeBar = createTimer(question.points);
-  currentQuestion.timerBar = timeBar;
+  
+  const timerBar = createTimer(question.points);
+  currentQuestion.timerBar = timerBar;
 }
 
 function renderOptions(question) {
