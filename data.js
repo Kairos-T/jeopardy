@@ -148,21 +148,21 @@ const gameData = {
           questions: [
             {
               points: 1,
-              question: "TODO",
-              options: ["", "", "", ""],
-              answer: "",
+              question: "What is a beneficial trade-off of low birth rate?",
+              options: ["Increased economic growth", "Increased job opportunities for foreign workers", "Increased tax revenues", "Less demand for land development"],
+              answer: "Less demand for land development",
             },
             {
               points: 3,
-              question: "TODO",
-              options: ["", "", "", ""],
-              answer: "[]",
+              question: "Which is a consequence of a declining birth rate on Singapore's economy?",
+              options: ["Increased demand for natural resources", "A larger workforce contributing to economic growth", "A decreased tax revenue, limiting government funding for essential services", "Increased competition in the global market"],
+              answer: "A decreased tax revenue, limiting government funding for essential services",
             },
             {
               points: 5,
-              question: "TODO",
-              options: ["", "", "", ""],
-              answer: "",
+              question: "What is one key risk associated with Singapore increasing its reliance on foreign workers to address a declining birth rate?",
+              options: ["Declining environmental preservation", "Decreased demand for public services", "Improved long-term economic stability", "Rising social tensions due to perceived job displacement"],
+              answer: "Rising social tensions due to perceived job displacement"
             },
           ],
         },
