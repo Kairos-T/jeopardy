@@ -92,25 +92,28 @@ function renderGameBoard() {
 }
 
 function createTimer(difficulty) {
-  const timerContainer = document.createElement("div");
-  timerContainer.className = "timer-container";
-
-  const timerBar = document.createElement("div");
+  // create timer container
+  const timerContainer = document.createElement('div');
+  timerContainer.className = 'timer-container';
+  
+  const timerBar = document.createElement('div');
   timerBar.className = `timer-bar ${getDifficultyClass(difficulty)}`;
-
+  
   timerContainer.appendChild(timerBar);
-
+  
   // insert timer at top of modal
-  const modalContent = document.querySelector(".modal-content");
+  const modalContent = document.querySelector('.modal-content');
   modalContent.insertBefore(timerContainer, modalContent.firstChild);
-
+  
   // set timer duration based on difficulty
   const duration = getDuration(difficulty);
   remainingTime = duration;
-
+  
   // start countdown
   startTimer(timerBar, duration);
+  return timerBar; // return the timer for stopping later
 }
+
 
 function getDifficultyClass(points) {
   if (points === 1) return "easy";
@@ -148,6 +151,18 @@ function startTimer(timerBar, duration) {
   }, 1000);
 }
 
+function stopTimer(timerBar) {
+  // stop transition
+  const currentWidth = window.getComputedStyle(timerBar).width;
+  timerBar.style.transition = 'none';
+  timerBar.style.width = currentWidth;
+  
+  // clear the interval
+  if (timerInterval) {
+    clearInterval(timerInterval);
+  }
+}
+
 function showQuestion(category, question) {
   currentQuestion = { category, question };
   questionText.textContent = question.question;
@@ -165,7 +180,8 @@ function showQuestion(category, question) {
   document.body.classList.add("modal-open");
   answerReveal.style.display = "none";
 
-  createTimer(question.points);
+  const timeBar = createTimer(question.points);
+  currentQuestion.timerBar = timeBar;
 }
 
 function renderOptions(question) {
@@ -192,16 +208,29 @@ function selectOption(selectedOption, question) {
     }
   });
 
+  // Stop timer when option selected
+  if (currentQuestion.timerBar) {
+    stopTimer(currentQuestion.timerBar);
+  }
+
   const questionId = `${currentQuestion.category.name}-${currentQuestion.question.points}`;
   revealedQuestions.add(questionId);
 }
 
 closeModalBtn.addEventListener("click", () => {
+  if (timerInterval) {
+    clearInterval(timerInterval);
+  }
+  
+  const timerContainer = document.querySelector('.timer-container');
+  if (timerContainer) {
+    timerContainer.remove();
+  }
+  
   // remove points display
   document.querySelector(".points-display").remove();
   questionModal.classList.add("hidden");
   document.body.classList.remove("modal-open");
   renderGameBoard();
 });
-
 initGame();
