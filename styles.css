@@ -180,27 +180,27 @@ body {
 
 /* Point-based colors */
 .question-card[data-points="1"] {
-  background-color: #2ecc71; /* Green for easy */
+  background-color: #00bf63; /* Green for easy */
 }
 
 .question-card[data-points="2"] {
-  background-color: #f39c12; /* Orange for medium */
+  background-color: #f4620e; /* Orange for medium */
 }
 
 .question-card[data-points="3"] {
-  background-color: #e74c3c; /* Red for hard */
+  background-color: #ff3131; /* Red for hard */
 }
 
 .question-card[data-points="1"]:hover:not(.revealed) {
-  background-color: #27ae60;
+  background-color: #00a85a;
 }
 
 .question-card[data-points="2"]:hover:not(.revealed) {
-  background-color: #d35400;
+  background-color: #e5500b;
 }
 
 .question-card[data-points="3"]:hover:not(.revealed) {
-  background-color: #c0392b;
+  background-color: #e62f2f;
 }
 
 .question-card.revealed {
