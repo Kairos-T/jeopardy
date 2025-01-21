@@ -168,40 +168,40 @@ const gameData = {
           questions: [
             {
               points: 1,
-              question: "What is a beneficial trade-off of low birth rate?",
+              question: "What is the consequence of spending more on boosting low birth rates?",
               options: [
-                "1) Increased economic growth",
-                "2) Increased job opportunities for foreign workers",
-                "3) Increased tax revenues",
-                "4) Less demand for land development",
+                "1) Immediate reduction of GDP",
+                "2) Increased tax revenues",
+                "3) Less demand for public services",
+                "4) Fewer investments in other sectors",
               ],
-              answer: "4) Less demand for land development",
+              answer: "4) Fewer investments in other sectors",
             },
             {
               points: 2,
               question:
-                "Which is a consequence of a declining birth rate on Singapore's economy?",
+                "Which is a consequence of increasing land use for family-friendly facilities to encourage higher birth rates?",
               options: [
-                "1) Increased demand for natural resources",
-                "2) A larger workforce contributing to economic growth",
-                "3) A decreased tax revenue, limiting government funding for essential services",
-                "4) Increased competition in the global market",
+                "1) Increased housing costs for all residents",
+                "2) Decreased demand for public transportation",
+                "3) Less space for commercial and industrial development",
+                "4) Improved environmental sustainability",
               ],
               answer:
-                "3) A decreased tax revenue, limiting government funding for essential services",
+                "3) Less space for commercial and industrial development",
             },
             {
               points: 3,
               question:
-                "What is one key risk associated with Singapore increasing its reliance on foreign workers to address a declining birth rate?",
+                "Why do we need to trade off our work culture for higher birth rates?",
               options: [
-                "1) Declining environmental preservation",
-                "2) Decreased demand for public services",
-                "3) Improved long-term economic stability",
-                "4) Rising social tensions due to perceived job displacement",
+                "1) To reduce the burden on the healthcare system",
+                "2) To ensure a sustainable workforce for the future",
+                "3) To increase work-life balance for all employees",
+                "4) To increase the number of working-age citizens",
               ],
               answer:
-                "4) Rising social tensions due to perceived job displacement",
+                "3) To increase work-life balance for all employees",
             },
           ],
         },
